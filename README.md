@@ -7,12 +7,12 @@ The idea is to control each channel separately from an automation software via U
 
 ![PCA9685 12-bit LEDs](adafruit-pca9685-leds.jpg)
 
-If you wan't to drive (e.g.) a RGB-Stripe from a color picker, you will be limited to 0-255 for a channel, as every color picker outputs the color values from 0-255. In that case, simply multiply the output by 16. Of course you will loose the smoothness of 12-bit. 
+If you want to drive, e.g. an RGB-Stripe from a color picker, you will be limited to 0-255 for a channel, as every color picker outputs the color values from 0-255. In that case, simply multiply the output by 16. Of course, you will lose the smoothness of 12-bit. 
 
-Please keep in mind, that the LED Controller itself only supplies 10-25mA for each channel. So logically you have to use a Transistor or a MOSFET to drive the load - see page 29 of the chip's datasheet.
+Please keep in mind, that the LED Controller itself only supplies 10-25mA for each channel. So logically you have to use a Transistor or MOSFET to drive the load - see page 29 of the chip's datasheet.
 
 ## Setup and Software
-Simply wire the LED Controller to the i2c bus of your Arduino, configure the wanted UDP Port and if you want the output of the PWM be inverted or not. The code is doing DHCP with the given MAC address. If you need static IP, it should be easy to modify according to the Arduino Ethernet Examples.
+Simply wire the LED Controller to the i2c bus of your Arduino, configure the wanted UDP port and wether you want the output of the PWM be inverted or not. The code is doing DHCP with the given MAC address. If you need static IP, it should be easy to modify according to the Arduino Ethernet Examples.
 
 Don't forget to install [Adafruits PCA9685 Arduino Library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library).
 
@@ -27,8 +27,8 @@ So, for example `3;2048` will dimm channel 4 to 50%. Channel number and brightne
 ![Arduino Setup and Wiring](arduino-pca9685-setup.jpg)
 
 ## History
-I stumbled over a project to controll a DMX Dimmer via the [Loxone Home Automation System](https://www.loxone.com/) over UDP: https://sourceforge.net/projects/udptodmx/. 
-This inspired me to do the same with the PCA9685 which I had laying around from another project. The handling of UDP messages is vastly migrated from Robert L.'s work.
+I stumbled over a project to control a DMX Dimmer via the [Loxone Home Automation System](https://www.loxone.com/) over UDP: https://sourceforge.net/projects/udptodmx/. 
+This inspired me to do the same with the PCA9685 which I had lying around from another project. The handling of UDP messages is vastly migrated from Robert L.'s work.
 
 ---
 
