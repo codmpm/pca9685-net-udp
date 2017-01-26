@@ -9,7 +9,6 @@ The idea is to control each channel separately from an automation software via U
 So you have better dimming control on lower brightnesses.
 
 ![PCA9685 12-bit LEDs](adafruit-pca9685-leds.jpg)
-(Well, not really visible in the picture...)
 
 If you wan't to drive (e.g.) a RGB-Stripe you will be limited to 0-255 for a channel, as every color picker output the color values from 0-255. In that case, simply multiply the output by 16. Of course you will loose the smoothness of 12-bit. 
 Please keep in mind, that the LED Controller itself only supplies 10-25mA for each channel. So logically you have to use a Transistor or a MOSFET drive the load. See page 29 of the chip's datasheet.
