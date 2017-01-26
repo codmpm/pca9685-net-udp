@@ -32,7 +32,7 @@ This inspired me to do the same with the PCA9685 which I had lying around from a
 
 ---
 
-Created with Arduino 1.8.1 using an Freaduino Uno and an Arduino W5100 Ethernet Shield.
+Created with Arduino 1.8.1 using a Freaduino Uno and an Arduino W5100 Ethernet Shield.
 
 
 
