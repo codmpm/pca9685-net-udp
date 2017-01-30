@@ -113,14 +113,14 @@ void handleUdp() {
 }
 
 void handleMsg() {
-  String strBuffer(msgBuffer);
+  //<channel>;<value>
+  uint8_t ch = 0;
+  uint16_t val = 0;
 
-  uint8_t delim = strBuffer.indexOf(";");
-  uint8_t ch = strBuffer.substring(0, delim).toInt();
-  uint16_t val = strBuffer.substring(delim + 1).toInt();
+  sscanf(msgBuffer, "%d;%d", &ch, &val);
 
   ch = (ch < 16) ? ch : 0;
-  val = (val < 4096) ? val : 4095;  
+  val = (val < 4096) ? val : 4095;
 
   //set desired value for desired channel
   pwm.setPin(ch, val, pwmInvert);
